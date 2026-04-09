@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documents\\Uni\\S6\\ZMP-BSI-MineSweeper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{15B8A093-5654-E154-2FDF-4C5475DF5F07}|Assembly-CSharp.csproj|d:\\documents\\uni\\s6\\zmp-bsi-minesweeper\\assets\\scripts\\minesweepermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15B8A093-5654-E154-2FDF-4C5475DF5F07}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\minesweepermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15B8A093-5654-E154-2FDF-4C5475DF5F07}|Assembly-CSharp.csproj|d:\\documents\\uni\\s6\\zmp-bsi-minesweeper\\assets\\scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15B8A093-5654-E154-2FDF-4C5475DF5F07}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tile.cs",
+              "DocumentMoniker": "D:\\Documents\\Uni\\S6\\ZMP-BSI-MineSweeper\\Assets\\Scripts\\Tile.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tile.cs",
+              "ToolTip": "D:\\Documents\\Uni\\S6\\ZMP-BSI-MineSweeper\\Assets\\Scripts\\Tile.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tile.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAYwCMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T08:45:57.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MinesweeperManager.cs",
+              "DocumentMoniker": "D:\\Documents\\Uni\\S6\\ZMP-BSI-MineSweeper\\Assets\\Scripts\\MinesweeperManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MinesweeperManager.cs",
+              "ToolTip": "D:\\Documents\\Uni\\S6\\ZMP-BSI-MineSweeper\\Assets\\Scripts\\MinesweeperManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MinesweeperManager.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAA9wHsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T08:38:27.68Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
