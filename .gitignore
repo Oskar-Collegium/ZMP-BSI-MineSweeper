@@ -5,6 +5,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+Assets/Packages/
 
 *.csproj
 *.unityproj
@@ -12,3 +13,4 @@
 *.suo
 *.user
 *.userprefs
+*.vs/

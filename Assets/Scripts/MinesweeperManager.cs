@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 public class MinesweeperManager : MonoBehaviour
 {
-    // move win/lose logic
-
     [Header("Grid Variables")]
     [SerializeField] Transform gridTransform;
     [SerializeField] int gridWidth;
@@ -16,9 +14,12 @@ public class MinesweeperManager : MonoBehaviour
     [SerializeField] Vector2 gridOffset;
 
     private Tile[,] grid;
+    private Tile lastClickedTile;
     private bool gameOver = false;
     private int revealedCount = 0;
+    private int totalSafeTiles;
 
+    // Singleton Variable
     public static MinesweeperManager instance; 
 
     private void Awake()
@@ -60,6 +61,31 @@ public class MinesweeperManager : MonoBehaviour
                 grid[x, y] = tile;
             }
         }
+    }
+
+    private void StartGame(int x, int y)
+    {
+        PlaceMines(x, y);
+        CalculateAdjacentNumbers();
+        totalSafeTiles = gridWidth * gridHeight - mineCount;
+        GameStatManager.instance.StartTimer();
+    }
+
+    private void Win()
+    {
+        Debug.Log("le win");
+        RevealAllTiles();
+        GameStatManager.instance.AddBonusScore();
+        GameStatManager.instance.StopTimer();
+        gameOver = true;
+    }
+
+    private void Lose()
+    {
+        Debug.Log("boo womp");
+        RevealAllMines();
+        lastClickedTile.SetSprite(Resources.Load<Sprite>("Sprites/TileExploded"));
+        gameOver = true;
     }
 
     private void PlaceMines(int first_x, int first_y)
@@ -131,40 +157,22 @@ public class MinesweeperManager : MonoBehaviour
         return count;
     }
 
-    public void RevealTile(int x, int y)
+    public void RevealTile(int x, int y) // win/lose logic here (move it later!)
     {
         if (gameOver || grid[x, y].IsRevealed || grid[x, y].IsFlagged) return;
 
-        grid[x, y].Reveal();
+        lastClickedTile = grid[x, y];
+        lastClickedTile.Reveal();
+        GameStatManager.instance.ScoreTileReveal();
         revealedCount++;
 
-        if (revealedCount <= 1)
-        {
-            PlaceMines(x, y);
-            CalculateAdjacentNumbers();
-        }
+        if (revealedCount <= 1) StartGame(x, y);
 
-        if (grid[x, y].HasMine) // lose
-        {
-            Debug.Log("boo womp");
-            RevealAllMines();
-            grid[x, y].SetSprite(Resources.Load<Sprite>("Sprites/TileExploded"));
-            gameOver = true;
-            return;
-        }
+        if (lastClickedTile.HasMine) { Lose(); return; }
 
-        if (grid[x, y].AdjacentMines == 0)
-        {
-            RevealAdjacentTiles(x, y);
-        }
-
-        int totalSafeTiles = gridWidth * gridHeight - mineCount;
-        if (revealedCount >= totalSafeTiles) // win
-        {
-            Debug.Log("le win");
-            RevealAllTiles();
-            gameOver = true;
-        }
+        if (lastClickedTile.AdjacentMines == 0) RevealAdjacentTiles(x, y);
+        
+        if (revealedCount >= totalSafeTiles) Win();
     }
 
     private void RevealAdjacentTiles(int x, int y)
